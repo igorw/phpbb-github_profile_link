@@ -1,0 +1,6 @@
+/* GitHub profile field modification
+---------------------------------------- */
+
+.github-icon, .github-icon a		{ background: none top left no-repeat; }
+ul.profile-icons li.github-icon	{ width: {IMG_ICON_CONTACT_GITHUB_WIDTH}px; height: {IMG_ICON_CONTACT_GITHUB_HEIGHT}px; }
+.github-icon, .github-icon a		{ background-image: url("{IMG_ICON_CONTACT_GITHUB_SRC}"); }

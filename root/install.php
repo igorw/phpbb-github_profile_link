@@ -25,7 +25,7 @@ if (!file_exists($phpbb_root_path . 'umil/umil_auto.' . $phpEx))
 	trigger_error('Please download the latest UMIL (Unified MOD Install Library) from: <a href="http://www.phpbb.com/mods/umil/">phpBB.com/mods/umil</a>', E_USER_ERROR);
 }
 
-$mod_name = 'github profile field';
+$mod_name = 'GitHub profile field';
 $version_config_name = 'github_version';
 $language_file = 'mods/github';
 

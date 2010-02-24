@@ -45,39 +45,169 @@
 			<file from="root/*.*" to="*.*" />
 		</copy>
 
-		<open src="index.php">
+		<open src="memberlist.php">
 			<edit>
-				<find>text to find</find>
-				<action type="replace-with">text to be replaced with</action>
+				<find><![CDATA[$user->setup(array('memberlist', 'groups'));]]></find>
+				<action type="after-add"><![CDATA[
+$user->add_lang('mods/github');]]></action>
 			</edit>
 			<edit>
-				<find>text to find</find>
-				<action type="after-add">text to be added on the line after</action>
+				<find><![CDATA[		'L_VIEWING_PROFILE'	=> sprintf($user->lang['VIEWING_PROFILE'], $username),]]></find>
+				<action type="after-add"><![CDATA[
+		'USER_GITHUB'		=> $data['user_github'],
+		'U_GITHUB'			=> ($data['user_github']) ? 'http://github.com/' . urlencode($data['user_github']) : '',]]></action>
+			</edit>
+		</open>
+		<open src="viewtopic.php">
+			<edit>
+				<find><![CDATA[	'U_BUMP_TOPIC'			=> (bump_topic_allowed($forum_id, $topic_data['topic_bumped'], $topic_data['topic_last_post_time'], $topic_data['topic_poster'], $topic_data['topic_last_poster_id'])) ? append_sid("{$phpbb_root_path}posting.$phpEx", "mode=bump&amp;f=$forum_id&amp;t=$topic_id&amp;hash=" . generate_link_hash("topic_$topic_id")) : '')
+);]]></find>
+				<action type="after-add"><![CDATA[
+$user->add_lang('mods/github');
+$template->assign_var('GITHUB_IMG', $user->img('icon_contact_github', 'GITHUB'));]]></action>
 			</edit>
 			<edit>
-				<find>text to find</find>
-				<action type="before-add">text to be added on the line before</action>
+				<find><![CDATA[				'allow_pm'			=> 0,
+			);]]></find>
+				<action type="after-add"><![CDATA[
+			$user_cache[$poster_id]['github'] = '';]]></action>
 			</edit>
 			<edit>
-				<find>text to find</find>
+				<find><![CDATA[			);]]></find>
+				<action type="after-add"><![CDATA[
+			$user_cache[$poster_id]['github'] = 'http://github.com/' . urlencode($row['user_github']);]]></action>
+			</edit>
+			<edit>
+				<find><![CDATA[		'L_IGNORE_POST'		=> ($row['hide_post']) ? sprintf($user->lang['POST_BY_FOE'], get_username_string('full', $poster_id, $row['username'], $row['user_colour'], $row['post_username']), '<a href="' . $viewtopic_url . "&amp;p={$row['post_id']}&amp;view=show#p{$row['post_id']}" . '">', '</a>') : '',
+	);]]></find>
+				<action type="after-add"><![CDATA[
+	$postrow['U_GITHUB'] = $user_cache[$poster_id]['github'];]]></action>
+			</edit>
+		</open>
+		<open src="adm/style/acp_users_profile.html">
+			<edit>
+				<find><![CDATA[		<dd><input type="text" id="jabber" name="jabber" value="{JABBER}" /></dd>]]></find>
+				<action type="after-add"><![CDATA[	</dl>
+	<dl>
+		<dt><label for="github">{L_UCP_GITHUB}:</label></dt>
+		<dd><input type="text" id="github" name="github" value="{GITHUB}" /></dd>]]></action>
+			</edit>
+		</open>
+		<open src="includes/acp/acp_styles.php">
+			<edit>
+				<find><![CDATA[		);]]></find>
+				<action type="after-add"><![CDATA[
+		$user->add_lang('mods/github');
+		$this->imageset_keys['icons'][] = 'icon_contact_github';]]></action>
+			</edit>
+		</open>
+		<open src="includes/acp/acp_users.php">
+			<edit>
+				<find><![CDATA[				$data['user_birthday']	= sprintf('%2d-%2d-%4d', $data['bday_day'], $data['bday_month'], $data['bday_year']);]]></find>
+				<action type="after-add"><![CDATA[
+				$user->add_lang('mods/github');
+				$data['github'] = request_var('github', $user_row['user_github']);]]></action>
+			</edit>
+			<edit>
+				<find><![CDATA[						'yim'			=> array('string', true, 5, 255),]]></find>
+				<action type="after-add"><![CDATA[						'github'		=> array('string', true, 1, 255),]]></action>
+			</edit>
+			<edit>
+				<find><![CDATA[						);]]></find>
+				<action type="after-add"><![CDATA[
+						$sql_ary['user_github'] = $data['github'];]]></action>
+			</edit>
+			<edit>
+				<find><![CDATA[				);]]></find>
+				<action type="after-add"><![CDATA[
+				$template->assign_var('GITHUB', $data['github']);]]></action>
+			</edit>
+		</open>
+		<open src="includes/ucp/ucp_pm_viewmessage.php">
+			<edit>
+				<find><![CDATA[	);]]></find>
+				<action type="after-add"><![CDATA[
+	$user->add_lang('mods/github');
+	$template->assign_var('U_GITHUB', ($user_info['user_github']) ? 'http://github.com/' . urlencode($user_info['user_yim']) : '');]]></action>
+			</edit>
+		</open>
+		<open src="includes/ucp/ucp_profile.php">
+			<edit>
+				<find><![CDATA[					'interests'		=> utf8_normalize_nfc(request_var('interests', $user->data['user_interests'], true)),
+				);]]></find>
+				<action type="after-add"><![CDATA[
+				$user->add_lang('mods/github');
+				$data['github'] = request_var('github', $user->data['user_github']);]]></action>
+			</edit>
+			<edit>
+				<find><![CDATA[						'yim'			=> array('string', true, 5, 255),]]></find>
+				<action type="after-add"><![CDATA[						'github'		=> array('string', true, 1, 255),]]></action>
+			</edit>
+			<edit>
+				<find><![CDATA[							'user_notify_type'	=> $data['notify'],
+						);]]></find>
+				<action type="after-add"><![CDATA[
+						$sql_ary['user_github'] = $data['github'];]]></action>
+			</edit>
+			<edit>
+				<find><![CDATA[					'INTERESTS'	=> $data['interests'],
+				));]]></find>
+				<action type="after-add"><![CDATA[
+				$template->assign_var('GITHUB', $data['github']);]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/imageset/imageset.cfg">
+			<edit>
+				<find><![CDATA[img_icon_user_warn = icon_user_warn.gif*20*20]]></find>
+				<action type="after-add"><![CDATA[
+img_icon_contact_github = icon_contact_github.gif*20*28]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/memberlist_view.html">
+			<edit>
+				<find><![CDATA[		<!-- IF U_JABBER and S_JABBER_ENABLED --><dt>{L_JABBER}:</dt> <dd><a href="{U_JABBER}" onclick="popup(this.href, 550, 320); return false;">{L_SEND_JABBER_MESSAGE}</a></dd><!-- ELSEIF USER_JABBER --><dt>{L_JABBER}:</dt> <dd>{USER_JABBER}</dd><!-- ENDIF -->]]></find>
+				<action type="after-add"><![CDATA[		<!-- IF U_GITHUB or USER_GITHUB --><dt>{L_GITHUB}:</dt> <dd><!-- IF U_GITHUB --><a href="{U_GITHUB}">{USER_GITHUB}</a><!-- ELSE -->{USER_GITHUB}<!-- ENDIF --></dd><!-- ENDIF -->]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/ucp_pm_viewmessage.html">
+			<edit>
+				<find><![CDATA[		<!-- IF U_PM or U_EMAIL or U_WWW or U_MSN or U_ICQ or U_YIM or U_AIM or U_JABBER -->]]></find>
 				<inline-edit>
-					<inline-find>find</inline-find>
-					<inline-action type="replace-with"> be replaced with</inline-action>
+					<inline-find><![CDATA[		<!-- IF U_PM or U_EMAIL or U_WWW or U_MSN or U_ICQ or U_YIM or U_AIM or U_JABBER ]]></inline-find>
+					<inline-action type="after-add"><![CDATA[or U_GITHUB ]]></inline-action>
 				</inline-edit>
 			</edit>
 			<edit>
-				<find>text to find</find>
+				<find><![CDATA[			<!-- IF U_JABBER --><li class="jabber-icon"><a href="{U_JABBER}" onclick="popup(this.href, 550, 320); return false;" title="{L_JABBER}"><span>{L_JABBER}</span></a></li><!-- ENDIF -->]]></find>
+				<action type="after-add"><![CDATA[			<!-- IF U_GITHUB --><li class="github-icon"><a href="{U_GITHUB}" title="{L_GITHUB}"><span>{L_GITHUB}</span></a></li><!-- ENDIF -->]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/ucp_profile_profile_info.html">
+			<edit>
+				<find><![CDATA[		<dd><input type="text" name="jabber" id="jabber" maxlength="255" value="{JABBER}" class="inputbox" /></dd>]]></find>
+				<action type="after-add"><![CDATA[	</dl>
+	<dl>
+		<dt><label for="github">{L_UCP_GITHUB}:</label></dt>
+		<dd><input type="text" name="github" id="github" maxlength="255" value="{GITHUB}" class="inputbox" /></dd>]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/viewtopic_body.html">
+			<edit>
+				<find><![CDATA[		<!-- IF postrow.U_PM or postrow.U_EMAIL or postrow.U_WWW or postrow.U_MSN or postrow.U_ICQ or postrow.U_YIM or postrow.U_AIM or postrow.U_JABBER -->]]></find>
 				<inline-edit>
-					<inline-find>find</inline-find>
-					<inline-action type="after-add">, err have a string appended to</inline-action>
+					<inline-find><![CDATA[		<!-- IF postrow.U_PM or postrow.U_EMAIL or postrow.U_WWW or postrow.U_MSN or postrow.U_ICQ or postrow.U_YIM or postrow.U_AIM or postrow.U_JABBER ]]></inline-find>
+					<inline-action type="after-add"><![CDATA[or postrow.U_GITHUB ]]></inline-action>
 				</inline-edit>
 			</edit>
 			<edit>
-				<find>text to find</find>
-				<inline-edit>
-					<inline-find>find</inline-find>
-					<inline-action type="before-add">have a sting pre-pended to on the line to </inline-action>
-				</inline-edit>
+				<find><![CDATA[					<!-- IF postrow.U_JABBER --><li class="jabber-icon"><a href="{postrow.U_JABBER}" onclick="popup(this.href, 550, 320); return false;" title="{L_JABBER}"><span>{L_JABBER}</span></a></li><!-- ENDIF -->]]></find>
+				<action type="after-add"><![CDATA[					<!-- IF postrow.U_GITHUB --><li class="github-icon"><a href="{postrow.U_GITHUB}" title="{L_GITHUB}"><span>{L_GITHUB}</span></a></li><!-- ENDIF -->]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/theme/stylesheet.css">
+			<edit>
+				<find><![CDATA[@import url("colours.css");]]></find>
+				<action type="after-add"><![CDATA[@import url("github.css");]]></action>
 			</edit>
 		</open>
 		

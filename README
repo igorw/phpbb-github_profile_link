@@ -4,7 +4,7 @@ INSTALL
 
 See install.xml for installation instructions. You can also find help at phpBB.com <http://www.phpbb.com/mods/> or use the installation tool <http://www.phpbb.com/mods/automod/>.
 
-This modification uses UMIL <http://www.phpbb.com/mods/umil/>.
+This modification uses UMIL <http://www.phpbb.com/mods/umil/>. If you are using the development version, you need to add UMIL manually. The version used can be found in develop/UMIL_VERSION.
 
 LICENSE
 

@@ -1,5 +1,7 @@
 GitHub profile link is a phpBB 3.0 modification which adds a new profile field for GitHub. It it displayed on viewtopic, viewprofile, ucp_pm_viewmessage, ucp, acp.
 
+The MODX actions were generated using the MODX generator <http://www.phpbb.com/mods/utilities/generator/>.
+
 INSTALL
 
 See install.xml for installation instructions. You can also find help at phpBB.com <http://www.phpbb.com/mods/> or use the installation tool <http://www.phpbb.com/mods/automod/>.

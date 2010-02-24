@@ -6,11 +6,11 @@
 	<header>
 		<license>http://opensource.org/licenses/gpl-license.php GNU General Public License v2</license>
 
-		<title lang="en">github profile link</title>
+		<title lang="en">GitHub profile link</title>
 
-		<description lang="en">github profile link is a phpBB 3.0 modification which adds a new profile field for github.</description>
+		<description lang="en">GitHub profile link is a phpBB 3.0 modification which adds a new profile field for GitHub.</description>
 
-		<author-notes lang="en">Development hosted by github: http://github.com/evil3/phpbb-github_profile_link</author-notes>
+		<author-notes lang="en">Development hosted by GitHub: http://github.com/evil3/phpbb-github_profile_link</author-notes>
 
 		<author-group>
 			<author>

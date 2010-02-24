@@ -26,8 +26,8 @@ if (!file_exists($phpbb_root_path . 'umil/umil_auto.' . $phpEx))
 }
 
 $mod_name = 'github profile field';
-$version_config_name = 'github_profile_field_version';
-$language_file = 'mods/github_profile_field';
+$version_config_name = 'github_version';
+$language_file = 'mods/github';
 
 $versions = array(
 	'1.0.0-dev'	=> array(

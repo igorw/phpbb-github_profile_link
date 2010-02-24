@@ -73,7 +73,8 @@ $template->assign_var('GITHUB_IMG', $user->img('icon_contact_github', 'GITHUB'))
 			$user_cache[$poster_id]['github'] = '';]]></action>
 			</edit>
 			<edit>
-				<find><![CDATA[			);]]></find>
+				<find><![CDATA[				'author_profile'	=> get_username_string('profile', $poster_id, $row['username'], $row['user_colour']),
+			);]]></find>
 				<action type="after-add"><![CDATA[
 			$user_cache[$poster_id]['github'] = 'http://github.com/' . urlencode($row['user_github']);]]></action>
 			</edit>
@@ -86,11 +87,12 @@ $template->assign_var('GITHUB_IMG', $user->img('icon_contact_github', 'GITHUB'))
 		</open>
 		<open src="adm/style/acp_users_profile.html">
 			<edit>
-				<find><![CDATA[		<dd><input type="text" id="jabber" name="jabber" value="{JABBER}" /></dd>]]></find>
-				<action type="after-add"><![CDATA[	</dl>
-	<dl>
+				<find><![CDATA[		<dd><input type="text" id="jabber" name="jabber" value="{JABBER}" /></dd>
+	</dl>]]></find>
+				<action type="after-add"><![CDATA[	<dl>
 		<dt><label for="github">{L_UCP_GITHUB}:</label></dt>
-		<dd><input type="text" id="github" name="github" value="{GITHUB}" /></dd>]]></action>
+		<dd><input type="text" id="github" name="github" value="{GITHUB}" /></dd>
+	</dl>]]></action>
 			</edit>
 		</open>
 		<open src="includes/acp/acp_styles.php">
@@ -173,8 +175,8 @@ img_icon_contact_github = icon_contact_github.gif*20*28]]></action>
 			<edit>
 				<find><![CDATA[		<!-- IF U_PM or U_EMAIL or U_WWW or U_MSN or U_ICQ or U_YIM or U_AIM or U_JABBER -->]]></find>
 				<inline-edit>
-					<inline-find><![CDATA[		<!-- IF U_PM or U_EMAIL or U_WWW or U_MSN or U_ICQ or U_YIM or U_AIM or U_JABBER ]]></inline-find>
-					<inline-action type="after-add"><![CDATA[or U_GITHUB ]]></inline-action>
+					<inline-find><![CDATA[U_JABBER]]></inline-find>
+					<inline-action type="after-add"><![CDATA[ or U_GITHUB]]></inline-action>
 				</inline-edit>
 			</edit>
 			<edit>
@@ -184,19 +186,20 @@ img_icon_contact_github = icon_contact_github.gif*20*28]]></action>
 		</open>
 		<open src="styles/prosilver/template/ucp_profile_profile_info.html">
 			<edit>
-				<find><![CDATA[		<dd><input type="text" name="jabber" id="jabber" maxlength="255" value="{JABBER}" class="inputbox" /></dd>]]></find>
-				<action type="after-add"><![CDATA[	</dl>
-	<dl>
+				<find><![CDATA[		<dd><input type="text" name="jabber" id="jabber" maxlength="255" value="{JABBER}" class="inputbox" /></dd>
+	</dl>]]></find>
+				<action type="after-add"><![CDATA[	<dl>
 		<dt><label for="github">{L_UCP_GITHUB}:</label></dt>
-		<dd><input type="text" name="github" id="github" maxlength="255" value="{GITHUB}" class="inputbox" /></dd>]]></action>
+		<dd><input type="text" name="github" id="github" maxlength="255" value="{GITHUB}" class="inputbox" /></dd>
+	</dl>]]></action>
 			</edit>
 		</open>
 		<open src="styles/prosilver/template/viewtopic_body.html">
 			<edit>
 				<find><![CDATA[		<!-- IF postrow.U_PM or postrow.U_EMAIL or postrow.U_WWW or postrow.U_MSN or postrow.U_ICQ or postrow.U_YIM or postrow.U_AIM or postrow.U_JABBER -->]]></find>
 				<inline-edit>
-					<inline-find><![CDATA[		<!-- IF postrow.U_PM or postrow.U_EMAIL or postrow.U_WWW or postrow.U_MSN or postrow.U_ICQ or postrow.U_YIM or postrow.U_AIM or postrow.U_JABBER ]]></inline-find>
-					<inline-action type="after-add"><![CDATA[or postrow.U_GITHUB ]]></inline-action>
+					<inline-find><![CDATA[postrow.U_JABBER]]></inline-find>
+					<inline-action type="after-add"><![CDATA[ or postrow.U_GITHUB]]></inline-action>
 				</inline-edit>
 			</edit>
 			<edit>

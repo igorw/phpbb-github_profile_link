@@ -1,0 +1,9 @@
+Before a release the version must be set in following locations.
+
+	- install.xml
+	  mod-version
+	  changelog
+	
+	- root/install.php
+
+	- git tag

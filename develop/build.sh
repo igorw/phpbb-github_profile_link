@@ -34,5 +34,5 @@ then
 			rm -rf "$UMIL_DIR/language/$file"
 		fi
 	done
-	zip -gr $ZIP_NAME $PREFIX
+	zip --quiet -gr $ZIP_NAME $PREFIX
 fi

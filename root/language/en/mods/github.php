@@ -34,5 +34,11 @@ $lang = array_merge($lang, array(
 
 // acp_styles
 $lang = array_merge($lang, array(
-	'IMG_GITHUB'				=> 'GitHub profile field',
+	'IMG_ICON_CONTACT_GITHUB'				=> 'GitHub profile field',
+));
+
+// everywhere else
+$lang = array_merge($lang, array(
+	'GITHUB'				=> 'GitHub',
+	'UCP_GITHUB'			=> 'GitHub account',
 ));

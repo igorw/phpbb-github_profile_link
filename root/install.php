@@ -30,7 +30,7 @@ $version_config_name = 'github_version';
 $language_file = 'mods/github';
 
 $versions = array(
-	'1.0.0-dev'	=> array(
+	'1.0.0-rc1'	=> array(
 		// add github column
 		'table_column_add' => array(
 			array(USERS_TABLE, 'user_github', array('VCHAR_UNI', '')),

@@ -8,6 +8,10 @@ See install.xml for installation instructions. You can also find help at phpBB.c
 
 This modification uses [UMIL](http://www.phpbb.com/mods/umil/). If you are using the development version, you need to add UMIL manually. The version used can be found in develop/UMIL_VERSION.
 
+# Building
+
+For building the MOD package you must use the develop/build.sh script. It will fetch required dependencies such as UMIL and create the package. There is a develop/clean.sh script to clean up the mess.
+
 # License
 
 It is released under the [GNU GPLv2](http://www.gnu.org/licenses/gpl-2.0.html).

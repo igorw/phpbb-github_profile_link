@@ -36,6 +36,7 @@ $versions = array(
 			array(USERS_TABLE, 'user_github', array('VCHAR_UNI', '')),
 		),
 	),
+	'1.0.0-rc2'	=> array(),
 );
 
 include($phpbb_root_path . 'umil/umil_auto.' . $phpEx);

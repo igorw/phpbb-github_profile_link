@@ -19,7 +19,7 @@
 			</author>
 		</author-group>
 
-		<mod-version>1.0.0-rc1</mod-version>
+		<mod-version>1.0.0-rc2</mod-version>
 
 		<installation>
 			<level>intermediate</level>
@@ -30,7 +30,7 @@
 		<history>
 			<entry>
 				<date>2010-02-25</date>
-				<rev-version>1.0.0-rc1</rev-version>
+				<rev-version>1.0.0-rc2</rev-version>
 				<changelog lang="en">
 					<change>Initial release</change>
 				</changelog>

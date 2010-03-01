@@ -24,7 +24,7 @@
 		<installation>
 			<level>intermediate</level>
 			<time>600</time>
-			<target-version>3.0.6</target-version>
+			<target-version>3.0.7</target-version>
 		</installation>
 
 		<history>
@@ -40,6 +40,7 @@
 				<rev-version>1.0.0-rc2</rev-version>
 				<changelog lang="en">
 					<change>[Change] Updated to MODX 1.2.4</change>
+					<change>[Change] Updated for phpBB 3.0.7</change>
 				</changelog>
 			</entry>
 		</history>

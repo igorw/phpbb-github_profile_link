@@ -30,9 +30,16 @@
 		<history>
 			<entry>
 				<date>2010-02-25</date>
-				<rev-version>1.0.0-rc2</rev-version>
+				<rev-version>1.0.0-rc1</rev-version>
 				<changelog lang="en">
 					<change>Initial release</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2010-03-xx</date>
+				<rev-version>1.0.0-rc2</rev-version>
+				<changelog lang="en">
+					<change>[Change] Updated to MODX 1.2.4</change>
 				</changelog>
 			</entry>
 		</history>

@@ -19,7 +19,7 @@
 			</author>
 		</author-group>
 
-		<mod-version>1.0.0-rc2</mod-version>
+		<mod-version>1.0.0-rc3</mod-version>
 
 		<installation>
 			<level>intermediate</level>
@@ -41,6 +41,12 @@
 				<changelog lang="en">
 					<change>[Change] Updated to MODX 1.2.4</change>
 					<change>[Change] Updated for phpBB 3.0.7</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2010-03-xx</date>
+				<rev-version>1.0.0-rc3</rev-version>
+				<changelog lang="en">
 				</changelog>
 			</entry>
 		</history>

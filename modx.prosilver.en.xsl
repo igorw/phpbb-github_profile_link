@@ -678,7 +678,7 @@ var enStrings = "dir=ltr\n" +
 "fnd=Find\n" +
 "fndt=<strong>Tip:</strong> This may be a partial find and not the whole line.\n" +
 "remove=Find and Delete\n" +
-"removet=<strong>Tip:</strong> Find and delete this string.\n" +
+"removet=<strong>Tip:</strong> Find and delete this code.\n" +
 "rplw=Replace with\n" +
 "rplwt=<strong>Tip:</strong> Replace the preceding line(s) to find with the following lines.\n" +
 "aft=Add after\n" +
@@ -690,7 +690,7 @@ var enStrings = "dir=ltr\n" +
 "ifnd=In-line Find\n" +
 "ifndt=<strong>Tip:</strong> This is a partial match of a line for in-line operations.\n" +
 "iremove=In-line Find and Delete\n" +
-"iremovet=<strong>Tip:</strong> Find this sting in the line and delete it.\n" +
+"iremovet=<strong>Tip:</strong> Find this code in the line and delete it.\n" +
 "irplw=In-line Replace with\n" +
 "irplwt=\n" +
 "iaft=In-line Add after\n" +
@@ -720,8 +720,8 @@ var enStrings = "dir=ltr\n" +
 "link-tl=Template lang\n" +
 "link-un=Uninstall instructions\n" +
 "installer-h2=PHP install file\n" +
-"installer-exp1=This is a php install file that needs to be run in order to complete the installation.\n" +
-"installer-exp2=Point your browser to yourdomain.tld/this_file.php to run it.\n" +
+"installer-exp1=There is a PHP install file that needs to be run in order to complete the installation.\n" +
+"installer-exp2=To run it point your browser to, for example,\n" +
 "ispt-int=Support in your language <strong>might</strong> be available at a <a href=\"http://www.phpbb.com/support/intl/\">international support site</a>.\n" +
 "del-heads=Delete files\n" +
 "del-head=Delete file\n" +
@@ -2123,9 +2123,9 @@ function toggle_edit(o)
 				<span class="corners-top"><span></span></span>
 					<div class="mod-about-padding">
 						<p>
-							<span id="lang-installer-exp1">This is a php install file that needs to be run in order to complete the installation.</span>
+							<span id="lang-installer-exp1">There is a PHP install file that needs to be run in order to complete the installation.</span>
 							<br />
-							<span id="lang-installer-exp2">Point your browser to yourdomain.tld/this_file.php to run it.</span>
+							<span id="lang-installer-exp2">To run it point your browser to, for example,</span><span dir="ltr"> domain.tld/phpBB3/<xsl:value-of select="mod:php-installer" /></span>
 						</p>
 						<div class="content">
 							<div class="codebox">
@@ -2217,7 +2217,7 @@ function toggle_edit(o)
 							</xsl:if>
 							<xsl:if test="name() = 'remove'">
 								<h4 id="lang-remove[{generate-id()}]" style="color: #FF0FFF;">Find and Delete</h4>
-								<p><span id="lang-removet[{generate-id()}]"><strong>Tip:</strong>  Find and delete this string.</span></p>
+								<p><span id="lang-removet[{generate-id()}]"><strong>Tip:</strong>  Find and delete this code.</span></p>
 								<div class="codebox">
 									<div class="codeHead"><span id="lang-cde-c[{generate-id()}]">Code:</span><a href="#" onclick="select_code(this); return false;" class="codeSelect"><span id="lang-cde-sa[{generate-id()}]">Select All</span></a></div>
 									<div class="codePre"><pre id="{generate-id()}" dir="ltr"><xsl:value-of select="current()" /></pre></div>
@@ -2262,7 +2262,7 @@ function toggle_edit(o)
 										</xsl:if>
 										<xsl:if test="name() = 'inline-remove'">
 											<h5 id="lang-iremove[{generate-id()}]" style="color: #FF0FFF;">In-line Find and Delete</h5>
-											<p><span id="lang-iremovet[{generate-id()}]"><strong>Tip:</strong> Find this sting in the line and delete it.</span></p>
+											<p><span id="lang-iremovet[{generate-id()}]"><strong>Tip:</strong> Find this code in the line and delete it.</span></p>
 											<div class="codebox">
 												<div class="codeHead"><span id="lang-cde-c[{generate-id()}]">Code:</span><a href="#" onclick="select_code(this); return false;" class="codeSelect"><span id="lang-cde-sa[{generate-id()}]">Select all</span></a></div>
 												<div class="codePre"><pre id="{generate-id()}" dir="ltr"><xsl:value-of select="current()" /></pre></div>

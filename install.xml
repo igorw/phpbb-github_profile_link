@@ -19,7 +19,7 @@
 			</author>
 		</author-group>
 
-		<mod-version>1.0.0-rc3</mod-version>
+		<mod-version>1.0.0</mod-version>
 
 		<installation>
 			<level>intermediate</level>
@@ -44,8 +44,8 @@
 				</changelog>
 			</entry>
 			<entry>
-				<date>2010-03-xx</date>
-				<rev-version>1.0.0-rc3</rev-version>
+				<date>2010-03-04</date>
+				<rev-version>1.0.0</rev-version>
 				<changelog lang="en">
 					<change>[Change] Updated to MODX 1.2.5</change>
 				</changelog>

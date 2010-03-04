@@ -233,7 +233,6 @@ img_icon_contact_github = icon_contact_github.gif*20*28]]></action>
 		
 		<diy-instructions lang="en">Go to the ACP -> Styles -> Imagesets; refresh each.
 Go to the ACP -> Styles -> Themes; refresh each.
-Go to the ACP; purge the cache.
-Navigate to install.php in your web browser and follow the instructions.</diy-instructions>
+Go to the ACP; purge the cache.</diy-instructions>
 	</action-group>
 </mod>

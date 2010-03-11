@@ -4,7 +4,7 @@ The MODX actions were generated using the [MODX generator](http://www.phpbb.com/
 
 # Installation
 
-See install.xml for installation instructions. You can also find help at phpBB.com <http://www.phpbb.com/mods/> or use the installation tool  [AutoMOD](http://www.phpbb.com/mods/automod/).
+See install.xml for installation instructions. You can also find help at phpBB.com <http://www.phpbb.com/mods/> or use the installation tool [AutoMOD](http://www.phpbb.com/mods/automod/).
 
 This modification uses [UMIL](http://www.phpbb.com/mods/umil/). If you are using the development version, you need to add UMIL manually. The version used can be found in develop/UMIL_VERSION.
 

@@ -19,12 +19,12 @@
 			</author>
 		</author-group>
 
-		<mod-version>1.0.0</mod-version>
+		<mod-version>1.0.1-dev</mod-version>
 
 		<installation>
 			<level>intermediate</level>
 			<time>600</time>
-			<target-version>3.0.7</target-version>
+			<target-version>3.0.7-pl1</target-version>
 		</installation>
 
 		<history>
@@ -48,6 +48,13 @@
 				<rev-version>1.0.0</rev-version>
 				<changelog lang="en">
 					<change>[Change] Updated to MODX 1.2.5</change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2010-0x-xx</date>
+				<rev-version>1.0.1</rev-version>
+				<changelog lang="en">
+					<change>[Change] Updated for phpBB 3.0.7-pl1</change>
 				</changelog>
 			</entry>
 		</history>

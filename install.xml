@@ -55,6 +55,8 @@
 				<rev-version>1.0.1</rev-version>
 				<changelog lang="en">
 					<change>[Change] Updated for phpBB 3.0.7-pl1</change>
+					<change>[Fix] Corrected wrong link in PMs (thanks Typo/DavidIQ)</change>
+					<change>[Fix] Include UMIL in package</change>
 				</changelog>
 			</entry>
 		</history>
@@ -152,7 +154,7 @@ $template->assign_var('GITHUB_IMG', $user->img('icon_contact_github', 'GITHUB'))
 				<find><![CDATA[	);]]></find>
 				<action type="after-add"><![CDATA[
 	$user->add_lang('mods/github');
-	$template->assign_var('U_GITHUB', ($user_info['user_github']) ? 'http://github.com/' . urlencode($user_info['user_yim']) : '');]]></action>
+	$template->assign_var('U_GITHUB', ($user_info['user_github']) ? 'http://github.com/' . urlencode($user_info['user_github']) : '');]]></action>
 			</edit>
 		</open>
 		<open src="includes/ucp/ucp_profile.php">

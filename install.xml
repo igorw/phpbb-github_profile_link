@@ -19,7 +19,7 @@
 			</author>
 		</author-group>
 
-		<mod-version>1.0.1-dev</mod-version>
+		<mod-version>1.0.1</mod-version>
 
 		<installation>
 			<level>intermediate</level>
@@ -51,7 +51,7 @@
 				</changelog>
 			</entry>
 			<entry>
-				<date>2010-0x-xx</date>
+				<date>2010-03-27</date>
 				<rev-version>1.0.1</rev-version>
 				<changelog lang="en">
 					<change>[Change] Updated for phpBB 3.0.7-pl1</change>
